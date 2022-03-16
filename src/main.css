@@ -7,7 +7,6 @@
 section {
   width: 100vw;
   height: 100vh;
-  background-color: #fb6b6b;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,10 +48,12 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100%;
   height: 80px;
+  background-color: #fb6b6b;
+  z-index: 1;
 }
 
 header img {
@@ -68,4 +69,62 @@ header h3 {
   line-height: 25px;
   letter-spacing: -0.012em;
   color: #ffffff;
+}
+
+.questions {
+  height: calc(auto + 20px);
+  margin-top: 110px;
+}
+
+.questions article {
+  width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.questions article h3 {
+  font-family: "Recursive";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 14px;
+  color: #333333;
+}
+
+.questions article ion-icon {
+  font-size: 25px;
+}
+
+/* Footer /*/
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+}
+
+footer h2 {
+  font-family: "Recursive";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 14px;
+  color: #333333;
+}
+
+/* tava quebrando layout com altura menor que 750px */
+@media (max-height: 750px) {
+  .questions article {
+    width: 250px;
+    padding: 10px;
+  }
 }
