@@ -11,7 +11,7 @@ export default function Question({ index, quest, response }) {
   if (!questExpand) {
     return (
       <article>
-        <h3>Pergunta {index}</h3>
+        <h3>{index}</h3>
         <ion-icon
           name="play-outline"
           onClick={() => {
@@ -21,5 +21,5 @@ export default function Question({ index, quest, response }) {
       </article>
     );
   }
-  return <Card />;
+  return <Card id={index} />;
 }
