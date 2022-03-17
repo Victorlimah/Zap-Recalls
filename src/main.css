@@ -14,13 +14,6 @@ section {
   z-index: 2;
 }
 
-.home {
-  overflow-y: hidden;
-  position: fixed;
-  top: 0;
-  z-index: 10;
-}
-
 section img {
   width: 100px;
   margin: 300px 0 10px 0;
@@ -106,6 +99,61 @@ header h3 {
 
 .questions article ion-icon {
   font-size: 25px;
+}
+
+article img {
+  width: 30px;
+}
+
+.backCard {
+  display: flex;
+  flex-direction: column;
+}
+
+.backCard h4 {
+  width: 100%;
+  font-family: "Recursive";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 14px;
+  color: #333333;
+  margin-bottom: 25px;
+}
+
+.zapResponse {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.zapResponse span {
+  width: 70px;
+  padding: 12px;
+  font-family: "Recursive";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.remember {
+  background: #2fbe34;
+  border-radius: 10px;
+}
+
+.almostRemember {
+  background: #ff922e;
+  border-radius: 10px;
+}
+
+.dontRemember {
+  background: #ff3030;
+  border-radius: 10px;
 }
 
 /* Footer /*/

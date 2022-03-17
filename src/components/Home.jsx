@@ -13,7 +13,7 @@ export default function Home() {
 
   if (visible) {
     return (
-      <section className="home">
+      <section>
         <img src="assets/images/logo.png" alt="logo zap" />
         <h2>ZapRecall</h2>
         <button
