@@ -46,11 +46,13 @@ const arrayQuests = [
 
 export default function Questions() {
   return (
-    <section className="questions">
-      {arrayQuests.map((quest) => (
-        <Question index={quest.index} />
-      ))}
-    </section>
+    <>
+      <section className="questions">
+        {arrayQuests.map((quest) => (
+          <Question index={quest.index} />
+        ))}
+      </section>
+    </>
   );
 }
 
