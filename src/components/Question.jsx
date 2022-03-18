@@ -2,7 +2,7 @@ import { useState } from "react";
 import Card from "./Card";
 
 export default function Question({ index, quest, response }) {
-  function expandQuestion(question) {
+  function expandQuestion() {
     setQuestExpand(true);
   }
 
@@ -11,15 +11,15 @@ export default function Question({ index, quest, response }) {
   if (!questExpand) {
     return (
       <article>
-        <h3>{index}</h3>
+        <h3>Pergunta</h3>
         <ion-icon
           name="play-outline"
           onClick={() => {
-            expandQuestion(index);
+            expandQuestion();
           }}
         ></ion-icon>
       </article>
     );
   }
-  return <Card id={index} />;
+  return <Card quest={index} />;
 }

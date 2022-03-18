@@ -29,7 +29,7 @@ section h2 {
   margin-bottom: 80px;
 }
 
-section button {
+.goRecall {
   width: 230px;
   margin-top: 50px;
   padding: 15px 30px 15px 30px;
