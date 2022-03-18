@@ -1,7 +1,12 @@
 import { useState } from "react";
 import Card from "./Card";
 
-export default function Question({ index, numberQuestion }) {
+export default function Question({
+  index,
+  numberQuestion,
+  setResponses,
+  responses,
+}) {
   function expandQuestion() {
     setQuestExpand(true);
   }
@@ -21,5 +26,7 @@ export default function Question({ index, numberQuestion }) {
       </article>
     );
   }
-  return <Card quest={index} />;
+  return (
+    <Card quest={index} setResponses={setResponses} responses={responses} />
+  );
 }

@@ -1,10 +1,10 @@
 import { getArrayLength } from "./Questions";
 
-export default function Footer() {
+export default function Footer({ questResponses }) {
   return (
     <footer>
       <h2>
-        {0}/{getArrayLength()} CONCLUÍDOS
+        {questResponses}/{getArrayLength()} CONCLUÍDOS
       </h2>
     </footer>
   );

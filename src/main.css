@@ -73,7 +73,7 @@ header h3 {
 }
 
 .questions {
-  height: auto;
+  height: (100vh + 100px);
   margin-top: 110px;
 }
 

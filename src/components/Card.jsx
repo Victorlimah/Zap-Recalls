@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { arrayQuests } from "./Decks";
 
-export default function Card({ quest }) {
+export default function Card(props) {
+  const { quest, setResponses, responses } = props;
   const [turned, setTurned] = useState(false);
 
   function getObj() {
@@ -11,6 +12,18 @@ export default function Card({ quest }) {
       }
     }
     return 0;
+  }
+
+  function clickDontRemember() {
+    setResponses(responses + 1);
+  }
+
+  function clickAlmostRemember() {
+    setResponses(responses + 1);
+  }
+
+  function clickRemember() {
+    setResponses(responses + 1);
   }
 
   let obj = arrayQuests[getObj()];
@@ -63,9 +76,3 @@ export default function Card({ quest }) {
     </>
   );
 }
-
-function clickDontRemember() {}
-
-function clickAlmostRemember() {}
-
-function clickRemember() {}
