@@ -14,7 +14,6 @@ export default function Card({ quest }) {
   }
 
   let obj = arrayQuests[getObj()];
-  console.log("o obj é: " + obj);
 
   if (!turned) {
     return (

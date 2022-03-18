@@ -9,8 +9,8 @@ export default function Questions() {
     <>
       <Header />
       <section className="questions">
-        {outroArray.map((quest) => (
-          <Question index={quest.quest} />
+        {outroArray.map((quest, index) => (
+          <Question index={quest.quest} numberQuestion={index + 1} />
         ))}
       </section>
       <Footer />
