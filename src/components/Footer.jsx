@@ -1,6 +1,10 @@
 import { getArrayLength } from "./Questions";
 
 export default function Footer({ questResponses }) {
+  if (questResponses === getArrayLength()) {
+    alert("ganhou");
+  }
+
   return (
     <footer>
       <h2>

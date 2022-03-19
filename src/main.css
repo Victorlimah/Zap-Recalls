@@ -162,7 +162,7 @@ header h3 {
   border-radius: 10px;
 }
 
-.almostRemember {
+.almost {
   background: #ff922e;
   border-radius: 10px;
 }
@@ -170,6 +170,28 @@ header h3 {
 .dontRemember {
   background: #ff3030;
   border-radius: 10px;
+}
+
+/* questions answered /*/
+
+#questTrue {
+  color: green;
+  text-decoration: line-through;
+}
+
+#trueIcon {
+  color: green;
+  font-size: 28px;
+}
+
+#questFalse {
+  color: red;
+  text-decoration: line-through;
+}
+
+#falseIcon {
+  color: red;
+  font-size: 28px;
 }
 
 /* Footer /*/

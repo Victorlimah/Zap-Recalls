@@ -27,6 +27,11 @@ export default function Question({
     );
   }
   return (
-    <Card quest={index} setResponses={setResponses} responses={responses} />
+    <Card
+      quest={index}
+      numberQuestion={numberQuestion}
+      setResponses={setResponses}
+      responses={responses}
+    />
   );
 }

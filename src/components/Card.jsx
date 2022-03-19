@@ -1,9 +1,11 @@
 import { useState } from "react";
 import { arrayQuests } from "./Decks";
+import QuestionAnswered from "./QuestionAnswered";
 
+let arrayResponses = ["", "", "", "", "", "", "", ""];
 export default function Card(props) {
-  const { quest, setResponses, responses } = props;
-  const [turned, setTurned] = useState(false);
+  const { quest, setResponses, responses, numberQuestion } = props;
+  const [face, setFace] = useState("front");
 
   function getObj() {
     for (let i = 0; i < arrayQuests.length; i++) {
@@ -15,20 +17,38 @@ export default function Card(props) {
   }
 
   function clickDontRemember() {
+    setFace("answered");
+    arrayResponses[numberQuestion - 1] = "false";
+    console.log(arrayResponses);
     setResponses(responses + 1);
   }
 
   function clickAlmostRemember() {
+    setFace("answered");
+    arrayResponses[numberQuestion - 1] = "almost";
     setResponses(responses + 1);
   }
 
   function clickRemember() {
+    setFace("answered");
+    arrayResponses[numberQuestion - 1] = "true";
+    console.log(arrayResponses[numberQuestion - 1]);
     setResponses(responses + 1);
   }
 
   let obj = arrayQuests[getObj()];
 
-  if (!turned) {
+  if (face === "answered") {
+    console.log(arrayResponses);
+    return (
+      <>
+        <QuestionAnswered
+          numberQuestion={numberQuestion}
+          result={arrayResponses[numberQuestion - 1]}
+        />
+      </>
+    );
+  } else if (face === "front") {
     return (
       <>
         <article className="frontCard">
@@ -36,43 +56,30 @@ export default function Card(props) {
           <img
             src="./assets/images/setinha.png"
             alt="setinha para virar card"
-            onClick={() => setTurned(true)}
+            onClick={() => setFace("back")}
           />
         </article>
       </>
     );
+  } else if (face === "back") {
+    return (
+      <>
+        <article className="backCard">
+          <h4>{obj.response}</h4>
+          <div className="zapResponse">
+            <span onClick={() => clickDontRemember()} className="dontRemember">
+              Não lembrei
+            </span>
+
+            <span onClick={() => clickAlmostRemember()} className="almost">
+              Quase não lembrei
+            </span>
+            <span onClick={() => clickRemember()} className="remember">
+              Zap!
+            </span>
+          </div>
+        </article>
+      </>
+    );
   }
-  return (
-    <>
-      <article className="backCard">
-        <h4>{obj.response}</h4>
-        <div className="zapResponse">
-          <span
-            onClick={() => {
-              clickDontRemember();
-            }}
-            className="dontRemember"
-          >
-            Não lembrei
-          </span>
-          <span
-            onClick={() => {
-              clickAlmostRemember();
-            }}
-            className="almostRemember"
-          >
-            Quase não lembrei
-          </span>
-          <span
-            onClick={() => {
-              clickRemember();
-            }}
-            className="remember"
-          >
-            Zap!
-          </span>
-        </div>
-      </article>
-    </>
-  );
 }

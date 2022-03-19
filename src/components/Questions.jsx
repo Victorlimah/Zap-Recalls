@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import { useState } from "react";
 
+let outroArray = shuffleArray(arrayQuests);
 export default function Questions() {
   const [questResponse, setQuestResponse] = useState(0);
 
@@ -11,13 +12,13 @@ export default function Questions() {
     setQuestResponse(value);
   }
 
-  let outroArray = shuffleArray(arrayQuests);
   return (
     <>
       <Header />
       <section className="questions">
         {outroArray.map((quest, index) => (
           <Question
+            key={index}
             index={quest.quest}
             numberQuestion={index + 1}
             setResponses={refreshResponses}
