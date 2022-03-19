@@ -33,6 +33,7 @@ export default function Footer({ questResponses }) {
       <h2>
         {questResponses}/{getArrayLength()} CONCLUÍDOS
       </h2>
+      <h5>AQUI FICARÃO OS ICONES</h5>
     </footer>
   );
 }
