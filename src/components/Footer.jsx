@@ -7,7 +7,12 @@ export default function Footer({ questResponses }) {
     if (arrayResponses.includes("false")) {
       return (
         <footer className="missed">
-          <h2>Putz, ainda faltaram alguns... Mas não desanime!</h2>
+          <span>😥 PUTZ!</span>
+          <h2>Ainda faltaram alguns... Mas não desanime!</h2>
+          <h5>AQUI FICARÃO OS ICONES</h5>
+          <button onClick={() => document.location.reload()}>
+            Voltar para tela inicial
+          </button>
         </footer>
       );
     }
@@ -17,7 +22,6 @@ export default function Footer({ questResponses }) {
         <h2>Você não esqueceu de nenhum flashcard!</h2>
         <h5>AQUI FICARÃO OS ICONES</h5>
         <button onClick={() => document.location.reload()}>
-          {" "}
           Voltar para tela inicial
         </button>
       </footer>
