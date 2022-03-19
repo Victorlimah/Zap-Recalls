@@ -14,7 +14,12 @@ export default function QuestionAnswered({ numberQuestion, result }) {
         <ion-icon id="falseIcon" name="close-circle-sharp"></ion-icon>
       </article>
     );
-  } else {
-    return <h1> Deu merda kkkkkk</h1>;
+  } else if (result === "almost") {
+    return (
+      <article className="questAnswered">
+        <h3 id="questAlmost">Pergunta {numberQuestion}</h3>
+        <ion-icon id="almostIcon" name="help-outline"></ion-icon>
+      </article>
+    );
   }
 }

@@ -175,22 +175,34 @@ header h3 {
 /* questions answered /*/
 
 #questTrue {
-  color: green;
+  color: #2fbe34;
   text-decoration: line-through;
 }
 
 #trueIcon {
-  color: green;
+  color: #2fbe34;
   font-size: 28px;
 }
 
 #questFalse {
-  color: red;
+  color: #ff3030;
   text-decoration: line-through;
 }
 
 #falseIcon {
-  color: red;
+  color: #ff3030;
+  font-size: 28px;
+}
+
+#questAlmost {
+  color: #ff922e;
+  text-decoration: line-through;
+}
+
+#almostIcon {
+  color: white;
+  background-color: #ff922e;
+  border-radius: 50%;
   font-size: 28px;
 }
 
