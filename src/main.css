@@ -3,6 +3,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Recursive&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
 
+body {
+  position: relative;
+  background-color: #fb6b6b;
+}
 /* HOME */
 section {
   width: 100vw;
@@ -203,28 +207,53 @@ header h3 {
   color: white;
   background-color: #ff922e;
   border-radius: 50%;
-  font-size: 28px;
+  font-size: 24px;
 }
 
 /* Footer /*/
 footer {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   position: fixed;
   bottom: 0;
   width: 100%;
   height: 80px;
   background-color: white;
+  font-family: "Recursive";
+  text-align: center;
 }
 
 footer h2 {
-  font-family: "Recursive";
-  font-style: normal;
   font-weight: 400;
   font-size: 22px;
-  line-height: 14px;
   color: #333333;
+}
+
+footer span {
+  font-weight: 700;
+  font-size: 30px;
+  color: #333333;
+}
+
+footer button {
+  width: 60%;
+  padding: 15px;
+  background: #fb6b6b;
+  border: none;
+  border-radius: 10px;
+  font-weight: 400;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.congrats {
+  height: 220px;
 }
 
 /* tava quebrando layout com altura menor que 750px */

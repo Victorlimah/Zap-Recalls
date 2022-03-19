@@ -1,5 +1,4 @@
 export default function QuestionAnswered({ numberQuestion, result }) {
-  console.log(result);
   if (result === "true") {
     return (
       <article className="questAnswered">
