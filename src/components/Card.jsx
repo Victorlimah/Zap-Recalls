@@ -60,7 +60,7 @@ export default function Card(props) {
 
   function replyQuest(response) {
     setFace("answered");
-    setResponses(responses + 1);
+    setResponses(responses + 1, response);
     arrayResponses[numberQuestion - 1] = response;
   }
   function clickDontRemember() {

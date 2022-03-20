@@ -3,13 +3,16 @@ import { arrayQuests } from "./Decks";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useState } from "react";
+import EmojisFooter from "./EmojisFooter";
 
 let outroArray = shuffleArray(arrayQuests);
 export default function Questions() {
   const [questResponse, setQuestResponse] = useState(0);
+  const [emojis, setEmojis] = useState([]);
 
-  function refreshResponses(value) {
+  function refreshResponses(value, emoji) {
     setQuestResponse(value);
+    setEmojis([...emojis, emoji]);
   }
 
   return (
@@ -26,7 +29,11 @@ export default function Questions() {
           />
         ))}
       </section>
-      <Footer questResponses={questResponse} responses={questResponse} />
+      <Footer
+        questResponses={questResponse}
+        responses={questResponse}
+        emojis={emojis}
+      />
     </>
   );
 }
