@@ -41,36 +41,15 @@ export default function Footer({ questResponses, emojis }) {
   );
 
   function emojisFactory(arr) {
-    let emoji = "";
-
-    if (arr.length !== 0) {
-      arr.map((status) => {
-        if (status === "true") {
-          emoji = <ion-icon id="trueIcon" name={trueIcon}></ion-icon>;
-        } else if (status === "false") {
-          emoji = <ion-icon id="falseIcon" name={falseIcon}></ion-icon>;
-        } else if (status === "almost") {
-          emoji = <ion-icon id="almostIcon" name={almostIcon}></ion-icon>;
-        }
-      });
-    }
-
-    //return <div className="status-icon">{emoji}</div>;
-
     return (
       <div className="status-icon">
-        {arr.map((status) => (
-          <ion-icon id="falseIcon" name={falseIcon}></ion-icon>
-        ))}
-      </div>
-    );
-
-    return (
-      <div className="status-icon">
-        {arr.map((status) => {
-          let name = "";
-          <ion-icon id="falseIcon" name={falseIcon}></ion-icon>;
-        })}
+        {arr.map((status) =>
+          status === "true" ? (
+            <ion-icon id="trueIcon" name={trueIcon}></ion-icon>
+          ) : (
+            <ion-icon id="falseIcon" name={falseIcon}></ion-icon>
+          )
+        )}
       </div>
     );
   }
