@@ -17,7 +17,7 @@ export default function QuestionAnswered({ numberQuestion, result }) {
     return (
       <article className="questAnswered">
         <h3 id="questAlmost">Pergunta {numberQuestion}</h3>
-        <ion-icon id="almostIcon" name="help-outline"></ion-icon>
+        <ion-icon id="almostIcon" name="help-circle-sharp"></ion-icon>
       </article>
     );
   }

@@ -46,8 +46,10 @@ export default function Footer({ questResponses, emojis }) {
         {arr.map((status) =>
           status === "true" ? (
             <ion-icon id="trueIcon" name={trueIcon}></ion-icon>
-          ) : (
+          ) : status === "false" ? (
             <ion-icon id="falseIcon" name={falseIcon}></ion-icon>
+          ) : (
+            <ion-icon id="almostIcon" name={almostIcon}></ion-icon>
           )
         )}
       </div>
@@ -57,4 +59,4 @@ export default function Footer({ questResponses, emojis }) {
 
 let trueIcon = "checkmark-circle-sharp";
 let falseIcon = "close-circle-sharp";
-let almostIcon = "help-outline";
+let almostIcon = "help-circle-sharp";
