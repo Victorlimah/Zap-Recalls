@@ -8,24 +8,15 @@ export default function App() {
   function goRecall() {
     setVisible(false);
   }
-  if (visible) {
-    return (
-      <section>
-        <Home />
-        <button
-          className="goRecall"
-          onClick={() => {
-            goRecall();
-          }}
-        >
-          Iniciar Recall!
-        </button>
-      </section>
-    );
-  }
-  return (
-    <>
-      <Questions />
-    </>
+
+  return visible ? (
+    <section>
+      <Home />
+      <button className="goRecall" onClick={() => goRecall()}>
+        Iniciar Recall!
+      </button>
+    </section>
+  ) : (
+    <Questions />
   );
 }
