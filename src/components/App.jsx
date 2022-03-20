@@ -1,6 +1,6 @@
 import { useState } from "react";
-import Home from "./Home";
-import Questions from "./Questions";
+import Questions from "./FlashCards/Questions";
+import Home from "./Structure/Home";
 
 export default function App() {
   const [visible, setVisible] = useState(true);

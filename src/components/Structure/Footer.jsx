@@ -1,11 +1,7 @@
-import EmojisFooter from "./EmojisFooter";
-import { getArrayLength } from "./Questions";
-import { arrayResponses } from "./Card";
+import { getArrayLength } from "../FlashCards/Questions";
+import { arrayResponses } from "../FlashCards/Card";
 
 export default function Footer({ questResponses, emojis }) {
-  console.log("rodando footer");
-  console.log(emojis);
-
   if (questResponses === getArrayLength()) {
     if (arrayResponses.includes("false")) {
       return (

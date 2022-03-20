@@ -1,9 +1,8 @@
 import Question from "./Question";
 import { arrayQuests } from "./Decks";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Structure/Header";
+import Footer from "../Structure/Footer";
 import { useState } from "react";
-import EmojisFooter from "./EmojisFooter";
 
 let outroArray = shuffleArray(arrayQuests);
 export default function Questions() {
