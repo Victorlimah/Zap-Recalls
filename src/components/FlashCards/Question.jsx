@@ -1,16 +1,8 @@
 import { useState } from "react";
 import Card from "./Card";
 
-export default function Question({
-  index,
-  numberQuestion,
-  setResponses,
-  responses,
-}) {
-  function expandQuestion() {
-    setQuestExpand(true);
-  }
-
+export default function Question(props) {
+  const { index, numberQuestion, setResponses, responses } = props;
   const [questExpand, setQuestExpand] = useState(false);
 
   if (!questExpand) {
@@ -19,9 +11,7 @@ export default function Question({
         <h3>Pergunta {numberQuestion}</h3>
         <ion-icon
           name="play-outline"
-          onClick={() => {
-            expandQuestion();
-          }}
+          onClick={() => expandQuestion()}
         ></ion-icon>
       </article>
     );
@@ -34,4 +24,8 @@ export default function Question({
       responses={responses}
     />
   );
+
+  function expandQuestion() {
+    setQuestExpand(true);
+  }
 }

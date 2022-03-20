@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { arrayQuests } from "./Decks";
 import QuestionAnswered from "./QuestionAnswered";
+import Arrow from "../../images/setinha.png";
 
-export let arrayResponses = ["", "", "", "", "", "", "", ""];
+export let arrayResponses = [];
 
 export default function Card(props) {
   const { quest, setResponses, responses, numberQuestion } = props;
@@ -12,19 +13,17 @@ export default function Card(props) {
 
   if (face === "answered") {
     return (
-      <>
-        <QuestionAnswered
-          numberQuestion={numberQuestion}
-          result={arrayResponses[numberQuestion - 1]}
-        />
-      </>
+      <QuestionAnswered
+        numberQuestion={numberQuestion}
+        result={arrayResponses[numberQuestion - 1]}
+      />
     );
   } else if (face === "front") {
     return (
       <article className="frontCard">
         <h4>{obj.quest}</h4>
         <img
-          src="./assets/images/setinha.png"
+          src={Arrow}
           alt="setinha para virar card"
           onClick={() => setFace("back")}
         />
@@ -38,9 +37,11 @@ export default function Card(props) {
           <span onClick={() => clickDontRemember()} className="dontRemember">
             Não lembrei
           </span>
+
           <span onClick={() => clickAlmostRemember()} className="almost">
             Quase não lembrei
           </span>
+
           <span onClick={() => clickRemember()} className="remember">
             Zap!
           </span>
