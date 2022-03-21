@@ -262,3 +262,15 @@ footer button {
     padding: 10px;
   }
 }
+
+@media (min-width: 800px) {
+  .questions article {
+    width: 40%;
+  }
+}
+
+@media (max-height: 720px) {
+  section img {
+    margin-top: 200px;
+  }
+}
