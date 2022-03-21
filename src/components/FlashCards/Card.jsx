@@ -20,7 +20,7 @@ export default function Card(props) {
     );
   } else if (face === "front") {
     return (
-      <article className="frontCard">
+      <article id="frontCard">
         <h4>{obj.quest}</h4>
         <img
           src={Arrow}
@@ -31,7 +31,7 @@ export default function Card(props) {
     );
   } else if (face === "back") {
     return (
-      <article className="backCard">
+      <article id="backCard">
         <h4>{obj.response}</h4>
         <div className="zapResponse">
           <span onClick={() => clickDontRemember()} className="dontRemember">

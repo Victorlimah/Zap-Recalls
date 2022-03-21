@@ -1,13 +1,30 @@
 import { getArrayLength } from "../FlashCards/Questions";
 import { arrayResponses } from "../FlashCards/Card";
+import { getGoals } from "../App";
 
 export default function Footer({ questResponses, emojis }) {
+  let countZapz = 0;
+  for (let zaps of emojis) {
+    if (zaps !== "false") countZapz++;
+  }
+
   if (questResponses === getArrayLength()) {
-    if (arrayResponses.includes("false")) {
+    if (arrayResponses.includes("false") && getGoals() > countZapz) {
       return (
         <footer className="missed">
           <span>😥 PUTZ!</span>
           <h2>Ainda faltaram alguns... Mas não desanime!</h2>
+          {emojisFactory(emojis)}
+          <button onClick={() => document.location.reload()}>
+            Voltar para tela inicial
+          </button>
+        </footer>
+      );
+    } else if (arrayResponses.includes("false") && getGoals() <= countZapz) {
+      return (
+        <footer className="missed">
+          <span>😬 É, NÉ !?</span>
+          <h2>Você esqueceu alguns... Mas bateu a meta!</h2>
           {emojisFactory(emojis)}
           <button onClick={() => document.location.reload()}>
             Voltar para tela inicial
