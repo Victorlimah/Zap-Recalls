@@ -6,6 +6,7 @@
 body {
   position: relative;
   background-color: #fb6b6b;
+  overflow-x: hidden;
 }
 /* HOME */
 section {
@@ -68,7 +69,11 @@ section input {
   padding: 15px 5px 15px 0;
   color: #fb6b6b;
 }
-
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 /* First screen */
 
 header {
