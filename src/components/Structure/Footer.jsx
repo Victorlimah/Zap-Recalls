@@ -3,6 +3,7 @@ import { arrayResponses } from "../FlashCards/Card";
 import { getGoals } from "../App";
 
 export default function Footer({ questResponses, emojis }) {
+  console.log(getGoals());
   let countZapz = 0;
   for (let zaps of emojis) {
     if (zaps !== "false") countZapz++;

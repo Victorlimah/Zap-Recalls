@@ -32,10 +32,24 @@ section h2 {
   color: #ffffff;
   margin-bottom: 80px;
 }
+form {
+  display: flex;
+  flex-direction: column;
+}
 
-.goRecall {
+form label {
+  font-family: "Recursive";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+}
+
+.goRecall,
+section input {
   width: 230px;
-  margin-top: 50px;
+  margin-top: 30px;
   padding: 15px 30px 15px 30px;
   background: #ffffff;
   color: #d70900;
@@ -45,6 +59,13 @@ section h2 {
   font-family: "Recursive";
   font-size: 22px;
   border-radius: 10px;
+}
+
+section input {
+  border: none;
+  font-size: 20px;
+  margin-top: 10px;
+  padding: 15px 5px 15px 0;
 }
 
 /* First screen */
