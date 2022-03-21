@@ -5,7 +5,7 @@ import Footer from "../Structure/Footer";
 import { useState } from "react";
 
 let outroArray = shuffleArray(arrayQuests);
-export default function Questions() {
+export default function Questions({ restart }) {
   const [questResponse, setQuestResponse] = useState(0);
   const [emojis, setEmojis] = useState([]);
 
@@ -32,6 +32,7 @@ export default function Questions() {
         questResponses={questResponse}
         responses={questResponse}
         emojis={emojis}
+        restart={restart}
       />
     </>
   );

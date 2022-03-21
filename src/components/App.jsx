@@ -7,6 +7,9 @@ let goals = 0;
 export default function App() {
   const [visible, setVisible] = useState(true);
 
+  function goRecall(value) {
+    setVisible(value);
+  }
   return visible ? (
     <section>
       <Home />
@@ -20,17 +23,13 @@ export default function App() {
           onChange={(goal) => setGoals(goal.target.value)}
         />
       </form>
-      <button className="goRecall" onClick={() => goRecall()}>
+      <button className="goRecall" onClick={() => goRecall(false)}>
         Iniciar Recall!
       </button>
     </section>
   ) : (
-    <Questions />
+    <Questions restart={goRecall} />
   );
-
-  function goRecall() {
-    setVisible(false);
-  }
 }
 
 function setGoals(goal) {

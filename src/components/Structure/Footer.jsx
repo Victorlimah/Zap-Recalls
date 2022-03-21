@@ -2,11 +2,10 @@ import { getArrayLength } from "../FlashCards/Questions";
 import { arrayResponses } from "../FlashCards/Card";
 import { getGoals } from "../App";
 
-export default function Footer({ questResponses, emojis }) {
-  console.log(getGoals());
+export default function Footer({ questResponses, emojis, restart }) {
   let countZapz = 0;
   for (let zaps of emojis) {
-    if (zaps !== "false") countZapz++;
+    if (zaps === "true") countZapz++;
   }
 
   if (questResponses === getArrayLength()) {
@@ -16,7 +15,7 @@ export default function Footer({ questResponses, emojis }) {
           <span>😥 PUTZ!</span>
           <h2>Ainda faltaram alguns... Mas não desanime!</h2>
           {emojisFactory(emojis)}
-          <button onClick={() => document.location.reload()}>
+          <button onClick={() => restart(true)}>
             Voltar para tela inicial
           </button>
         </footer>
@@ -27,7 +26,18 @@ export default function Footer({ questResponses, emojis }) {
           <span>😬 É, NÉ !?</span>
           <h2>Você esqueceu alguns... Mas bateu a meta!</h2>
           {emojisFactory(emojis)}
-          <button onClick={() => document.location.reload()}>
+          <button onClick={() => restart(true)}>
+            Voltar para tela inicial
+          </button>
+        </footer>
+      );
+    } else if (getGoals() > countZapz) {
+      return (
+        <footer className="missed">
+          <span>😬 É, NÉ !?</span>
+          <h2>Você lembrou todos... Mas não bateu a meta!</h2>
+          {emojisFactory(emojis)}
+          <button onClick={() => restart(true)}>
             Voltar para tela inicial
           </button>
         </footer>
@@ -38,9 +48,7 @@ export default function Footer({ questResponses, emojis }) {
         <span>🥳 PARABÉNS!</span>
         <h2>Você não esqueceu de nenhum flashcard!</h2>
         {emojisFactory(emojis)}
-        <button onClick={() => document.location.reload()}>
-          Voltar para tela inicial
-        </button>
+        <button onClick={() => restart(true)}>Voltar para tela inicial</button>
       </footer>
     );
   }
