@@ -14,6 +14,10 @@ export default function App() {
     <section>
       <Home />
       <form>
+        {/* Não quis por a mensagem no placeholder pq mesmo com o min = 1,
+       se deixar vazio a meta fica em 0, então botei um label e 
+       indiquei o placeholder como "inicio" em 0 :)*/}
+
         <label for="goalsZap">Digite sua meta de zaps...</label>
         <input
           type="number"
