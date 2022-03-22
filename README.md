@@ -4,7 +4,7 @@
 
 <p align="center">
 
- <img src="https://i.ibb.co/8mx2T8b/zap-recalls.png" alt="Prints do zap recalls" />
+ <img src="https://i.ibb.co/fxWdXN6/final.png" alt="Prints do zap recalls" />
 </p>
 
 
